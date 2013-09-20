@@ -2,7 +2,7 @@ package gomoney
 
 import "testing"
 
-func TestCurrencyCreation(t *testing.T) {
+func TestNewCurrency(t *testing.T) {
 	btc := NewCurrency(
 		"BTC",
 		"Bitcoin",
