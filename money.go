@@ -6,5 +6,5 @@ type money struct {
 }
 
 func NewMoney(c *currency, v float64) *money {
-  return &money{v, c}
+	return &money{v, c}
 }

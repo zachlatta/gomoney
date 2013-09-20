@@ -11,8 +11,8 @@ func TestNewMoney(t *testing.T) {
 		1000000,
 		",",
 		".")
-  m := NewMoney(btc, 0)
-  if m == nil {
-    t.Fail()
-  }
+	m := NewMoney(btc, 0)
+	if m == nil {
+		t.Fail()
+	}
 }
