@@ -1,6 +1,10 @@
 package gomoney
 
-type Money struct {
-	currency currency
-	value    float64
+type money struct {
+	Value    float64
+	currency *currency
+}
+
+func NewMoney(c *currency, v float64) *money {
+  return &money{v, c}
 }
