@@ -11,7 +11,7 @@ func TestNewCurrency(t *testing.T) {
 		1000000,
 		",",
 		".")
-    if btc == nil {
-      t.Fail()
-    }
+	if btc == nil {
+		t.Fail()
+	}
 }
