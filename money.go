@@ -5,6 +5,10 @@ type money struct {
 	currency *currency
 }
 
-func NewMoney(c *currency, v float64) *money {
-	return &money{v, c}
+func NewMoney(c *currency) *money {
+	return NewMoneyWithAmount(0, c)
+}
+
+func NewMoneyWithAmount(a float64, c *currency) *money {
+	return &money{a, c}
 }

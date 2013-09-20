@@ -3,7 +3,21 @@ package gomoney
 import "testing"
 
 func TestNewMoney(t *testing.T) {
-	btc := NewCurrency(
+	m := NewMoney(btc())
+	if m == nil {
+		t.Fail()
+	}
+}
+
+func TestNewMoneyWithAmount(t *testing.T) {
+	m := NewMoneyWithAmount(1.337, btc())
+	if m == nil {
+		t.Fail()
+	}
+}
+
+func btc() *currency {
+	return NewCurrency(
 		"BTC",
 		"Bitcoin",
 		"Ƀ",
@@ -11,8 +25,4 @@ func TestNewMoney(t *testing.T) {
 		1000000,
 		",",
 		".")
-	m := NewMoney(btc, 0)
-	if m == nil {
-		t.Fail()
-	}
 }
