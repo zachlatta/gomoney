@@ -1,6 +1,6 @@
 package gomoney
 
 type Money struct {
-	currency Currency
+	currency currency
 	value    float64
 }
