@@ -16,13 +16,20 @@ func TestNewMoneyWithAmount(t *testing.T) {
 	}
 }
 
+func TestSubunits(t *testing.T) {
+	m := NewMoneyWithAmount(100000000, btc())
+	if m.Subunits() != float64(1) {
+		t.Fail()
+	}
+}
+
 func btc() *currency {
 	return NewCurrency(
 		"BTC",
 		"Bitcoin",
 		"Ƀ",
 		"Satoshi",
-		1000000,
+		100000000,
 		",",
 		".")
 }
