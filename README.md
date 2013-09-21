@@ -20,34 +20,36 @@ Use in project with:
 
 ## Usage
 
-    package main
+``` go
+package main
 
-    import (
-      "fmt"
-      "github.com/zachlatta/gomoney"
-    )
+import (
+  "fmt"
+  "github.com/zachlatta/gomoney"
+)
 
-    func main() {
-      money := gomoney.NewMoney(btc())
-      fmt.Println(money) // Prints 0Ƀ
+func main() {
+  money := gomoney.NewMoney(btc())
+  fmt.Println(money) // Prints 0Ƀ
 
-      moneyWithInitialValue := gomoney.NewMoneyWithValue(15, btc())
-      fmt.Println(moneyWithInitialValue) // Prints 15Ƀ
+  moneyWithInitialValue := gomoney.NewMoneyWithValue(15, btc())
+  fmt.Println(moneyWithInitialValue) // Prints 15Ƀ
 
-      money.Value += 42.4238
-      fmt.Println(money) // Prints 42.4238Ƀ
+  money.Value += 42.4238
+  fmt.Println(money) // Prints 42.4238Ƀ
 
-      // ...and more! Check the source.
-    }
+  // ...and more! Check the source.
+}
 
-    func btc() *gomoney.Currency {
-      return gomoney.NewCurrency(
-        "BTC",
-        "Bitcoin",
-        "Ƀ",
-        false,
-        "Satoshi",
-        1000000,
-        ",",
-        ".")
-    }
+func btc() *gomoney.Currency {
+  return gomoney.NewCurrency(
+    "BTC",
+    "Bitcoin",
+    "Ƀ",
+    false,
+    "Satoshi",
+    1000000,
+    ",",
+    ".")
+}
+```
