@@ -23,11 +23,19 @@ func TestSubunits(t *testing.T) {
 	}
 }
 
+func TestString(t *testing.T) {
+	m := NewMoneyWithAmount(42, btc())
+	if m.String() != "42Ƀ" {
+		t.Fail()
+	}
+}
+
 func btc() *currency {
 	return NewCurrency(
 		"BTC",
 		"Bitcoin",
 		"Ƀ",
+		false,
 		"Satoshi",
 		100000000,
 		",",

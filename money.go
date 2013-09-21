@@ -1,5 +1,7 @@
 package gomoney
 
+import "fmt"
+
 type money struct {
 	Value    float64
 	currency *currency
@@ -18,4 +20,11 @@ func (m *money) Subunits() float64 {
 		return 0
 	}
 	return m.Value / float64(m.currency.subunitToUnit)
+}
+
+func (m *money) String() string {
+	if m.currency.symbolPrecedesValue == true {
+		return fmt.Sprintf("%s%g", m.currency.symbol, m.Value)
+	}
+	return fmt.Sprintf("%g%s", m.Value, m.currency.symbol)
 }

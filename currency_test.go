@@ -7,6 +7,7 @@ func TestNewCurrency(t *testing.T) {
 		"BTC",
 		"Bitcoin",
 		"Ƀ",
+		false,
 		"Satoshi",
 		1000000,
 		",",
