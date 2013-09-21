@@ -37,7 +37,7 @@ func TestString(t *testing.T) {
 	}
 }
 
-func btc() *currency {
+func btc() *Currency {
 	return NewCurrency(
 		"BTC",
 		"Bitcoin",

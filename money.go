@@ -2,33 +2,33 @@ package gomoney
 
 import "fmt"
 
-type money struct {
+type Money struct {
 	Value    float64
-	currency *currency
+	Currency *Currency
 }
 
-func NewMoney(c *currency) *money {
+func NewMoney(c *Currency) *Money {
 	return NewMoneyWithAmount(0, c)
 }
 
-func NewMoneyWithAmount(a float64, c *currency) *money {
-	return &money{a, c}
+func NewMoneyWithAmount(a float64, c *Currency) *Money {
+	return &Money{a, c}
 }
 
-func (m *money) Subunits() float64 {
+func (m *Money) Subunits() float64 {
 	if m.Value == 0 {
 		return 0
 	}
-	return m.Value / float64(m.currency.subunitToUnit)
+	return m.Value / float64(m.Currency.subunitToUnit)
 }
 
-func (m *money) Symbol() string {
-	return m.currency.symbol
+func (m *Money) Symbol() string {
+	return m.Currency.symbol
 }
 
-func (m *money) String() string {
-	if m.currency.symbolPrecedesValue == true {
-		return fmt.Sprintf("%s%g", m.currency.symbol, m.Value)
+func (m *Money) String() string {
+	if m.Currency.symbolPrecedesValue == true {
+		return fmt.Sprintf("%s%g", m.Currency.symbol, m.Value)
 	}
-	return fmt.Sprintf("%g%s", m.Value, m.currency.symbol)
+	return fmt.Sprintf("%g%s", m.Value, m.Currency.symbol)
 }
