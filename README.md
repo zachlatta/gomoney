@@ -1,4 +1,4 @@
-# gomoney
+# gomoney [![Build Status](https://travis-ci.org/zachlatta/gomoney.png?branch=master)](https://travis-ci.org/zachlatta/gomoney)
 
 This library makes handling money in Go easy. Heavily inspired by
 https://github.com/RubyMoney/money
