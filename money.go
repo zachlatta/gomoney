@@ -22,6 +22,10 @@ func (m *money) Subunits() float64 {
 	return m.Value / float64(m.currency.subunitToUnit)
 }
 
+func (m *money) Symbol() string {
+	return m.currency.symbol
+}
+
 func (m *money) String() string {
 	if m.currency.symbolPrecedesValue == true {
 		return fmt.Sprintf("%s%g", m.currency.symbol, m.Value)

@@ -23,6 +23,13 @@ func TestSubunits(t *testing.T) {
 	}
 }
 
+func TestSymbol(t *testing.T) {
+	m := NewMoneyWithAmount(14, btc())
+	if m.Symbol() != "Ƀ" {
+		t.Fail()
+	}
+}
+
 func TestString(t *testing.T) {
 	m := NewMoneyWithAmount(42, btc())
 	if m.String() != "42Ƀ" {
