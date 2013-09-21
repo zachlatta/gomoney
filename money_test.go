@@ -9,29 +9,29 @@ func TestNewMoney(t *testing.T) {
 	}
 }
 
-func TestNewMoneyWithAmount(t *testing.T) {
-	m := NewMoneyWithAmount(1.337, btc())
+func TestNewMoneyWithValue(t *testing.T) {
+	m := NewMoneyWithValue(1.337, btc())
 	if m == nil {
 		t.Fail()
 	}
 }
 
 func TestSubunits(t *testing.T) {
-	m := NewMoneyWithAmount(100000000, btc())
+	m := NewMoneyWithValue(100000000, btc())
 	if m.Subunits() != float64(1) {
 		t.Fail()
 	}
 }
 
 func TestSymbol(t *testing.T) {
-	m := NewMoneyWithAmount(14, btc())
+	m := NewMoneyWithValue(14, btc())
 	if m.Symbol() != "Ƀ" {
 		t.Fail()
 	}
 }
 
 func TestString(t *testing.T) {
-	m := NewMoneyWithAmount(42, btc())
+	m := NewMoneyWithValue(42, btc())
 	if m.String() != "42Ƀ" {
 		t.Fail()
 	}

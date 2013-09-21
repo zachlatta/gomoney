@@ -8,10 +8,10 @@ type Money struct {
 }
 
 func NewMoney(c *Currency) *Money {
-	return NewMoneyWithAmount(0, c)
+	return NewMoneyWithValue(0, c)
 }
 
-func NewMoneyWithAmount(a float64, c *Currency) *Money {
+func NewMoneyWithValue(a float64, c *Currency) *Money {
 	return &Money{a, c}
 }
 
